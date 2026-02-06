@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Calculator</title>
+    <script>
+        function calculateTotalMechanicalEnergy() {
+            const potentialEnergy = parseFloat(document.getElementById('potentialEnergy').value) || 0;
+            const kineticEnergy = parseFloat(document.getElementById('kineticEnergy').value) || 0;
+            const totalMechanicalEnergy = potentialEnergy + kineticEnergy;
+            document.getElementById('result').innerText = `Total Mechanical Energy: ${totalMechanicalEnergy} J`;
+        }
+
+        window.onload = () => {
+            calculateTotalMechanicalEnergy(); // Default calculation
+        };
+    </script>
+</head>
+<body>
+    <h1>Total Mechanical Energy Calculator</h1>
+    <label for="potentialEnergy">Potential Energy (J):</label>
+    <input type="number" id="potentialEnergy" placeholder="Enter potential energy in Joules" onchange="calculateTotalMechanicalEnergy()"><br>
+    <label for="kineticEnergy">Kinetic Energy (J):</label>
+    <input type="number" id="kineticEnergy" placeholder="Enter kinetic energy in Joules" onchange="calculateTotalMechanicalEnergy()"><br>
+    <p id="result"></p>
+</body>
+</html>
