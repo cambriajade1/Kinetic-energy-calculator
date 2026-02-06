@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Calculator - Choose Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .interface-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .interface-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+        }
+
+        .interface-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .interface-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .interface-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .interface-desc {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .python-section {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .python-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            overflow-x: auto;
+        }
+
+        .code-desc {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        @media (max-width: 600px) {
+            .interface-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                padding: 25px;
+            }
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        a.interface-card {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚙️ Energy Calculator</h1>
+        <p class="subtitle">Choose your interface</p>
+
+        <div class="interface-grid">
+            <a href="rocket.html" class="interface-card" style="grid-column: 1 / -1; background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);">
+                <div class="interface-icon">🚀</div>
+                <div class="interface-name">Launch Pad</div>
+                <div class="interface-desc">Animated landing page - Share this one!</div>
+            </a>
+
+            <a href="index.html" class="interface-card">
+                <div class="interface-icon">🌐</div>
+                <div class="interface-name">Web Interface</div>
+                <div class="interface-desc">Modern & Fast</div>
+            </a>
+
+            <div class="interface-card" style="cursor: default; background: #999;">
+                <div class="interface-icon">🖥️</div>
+                <div class="interface-name">GUI App</div>
+                <div class="interface-desc">Run: gui_calculator.py</div>
+            </div>
+
+            <div class="interface-card" style="cursor: default; background: #999;">
+                <div class="interface-icon">💻</div>
+                <div class="interface-name">CLI</div>
+                <div class="interface-desc">Run: energy_calculator.py</div>
+            </div>
+
+            <div class="interface-card" style="cursor: default; background: #999;">
+                <div class="interface-icon">📚</div>
+                <div class="interface-name">Python Library</div>
+                <div class="interface-desc">Import & Use</div>
+            </div>
+        </div>
+
+        <div class="python-section">
+            <h2>📱 How to Use</h2>
+
+            <div class="code-desc"><strong>Web Interface (Recommended):</strong></div>
+            <div class="code-block">python3 launch_web.py</div>
+
+            <div class="code-desc"><strong>Desktop GUI:</strong></div>
+            <div class="code-block">python3 gui_calculator.py</div>
+
+            <div class="code-desc"><strong>Command Line:</strong></div>
+            <div class="code-block">python3 energy_calculator.py</div>
+
+            <div class="code-desc"><strong>As Python Module:</strong></div>
+            <div class="code-block">from energy_calculator import EnergyCalculator
+ke = EnergyCalculator.kinetic_energy(5, 10)  # 250 J</div>
+        </div>
+
+        <div class="footer">
+            <p>Kinetic and Potential Energy Calculator in SI Units</p>
+            <p>All interfaces use the same reliable calculations</p>
+        </div>
+    </div>
+</body>
+</html>
